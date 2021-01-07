@@ -1,10 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Pragati+Narrow:wght@700&display=swap');
-
 //  Foundation for Sites Settings
 //  -----------------------------
 //
 //  Table of Contents:
 //
+//** 0. Custom
 //   1. Global
 //   2. Breakpoints
 //   3. The Grid
@@ -64,16 +63,66 @@
 
 @import 'util/util';
 
+// Custom Typography
+@font-face {
+  font-family: 'Pragati Narrow';
+  src: url('../assets/fonts/PragatiNarrow-Bold.woff2') format('woff2'),
+    url('../assets/fonts/PragatiNarrow-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pragati Narrow';
+  src: url('../assets/fonts/PragatiNarrow-Regular.woff2') format('woff2'),
+    url('../assets/fonts/PragatiNarrow-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lettera Text Pro';
+  src: url('../assets/fonts/LetteraTextPro.woff2') format('woff2'),
+    url('../assets/fonts/LetteraTextPro.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lettera Text Pro';
+  src: url('../assets/fonts/LetteraTextPro-Bold.woff2') format('woff2'),
+    url('../assets/fonts/LetteraTextPro-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vollkorn';
+  src: url('../assets/fonts/Vollkorn-Italic.woff2') format('woff2'),
+    url('../assets/fonts/Vollkorn-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
 // ** Custom Global
 $elysian-background: #fcfaf6;
 $elysian-primary: #547879;
 $elysian-secondary: #f7f0e4;
 $elysian-tertiary: #e0abaa;
-$elysian-primary-darken: #476666;
+$elysian-primary-dark: #476666;
+$elysian-primary-light: #9fafb0;
+$elysian-primary-light-2: #8b9e9f;
+
 @mixin transition {
   transition: all 0.2s ease-in;
 }
 
+// ** Global
 body {
   color: $elysian-primary;
 }
@@ -83,32 +132,150 @@ a {
   font-weight: 700;
   &:hover,
   &:focus {
-    color: $elysian-primary-darken !important;
+    color: $elysian-primary-dark !important;
   }
 }
 
+.text-italic {
+  font-family: 'Vollkorn', serif;
+  color: $elysian-tertiary;
+  font-size: 18px;
+}
+.btn-container {
+  margin: 10px 0;
+  display: inline-block;
+}
+.btn-round {
+  padding: 5px 30px;
+  border-radius: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  &.btn-white-1 {
+    color: $elysian-primary;
+    background-color: $elysian-secondary;
+  }
+  &.btn-white-2 {
+    color: $elysian-primary-light-2;
+    background-color: $elysian-secondary;
+  }
+  &.btn-green {
+    color: $elysian-secondary;
+    background-color: $elysian-primary;
+  }
+}
+
+.max-600 {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.spacer-bar {
+  width: 50px;
+  clear: both;
+  height: 0;
+  margin: 50px auto;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 1px solid #cacaca;
+  border-left: 0;
+}
+
+.logo {
+  width: 144px;
+  display: inline-block;
+}
+
+.text-all-uppercase {
+  text-transform: uppercase;
+}
+
+.flex-inline {
+  display: inline-flex !important;
+}
+.flex-align-center {
+  align-items: center;
+}
+.flex-align-end {
+  align-items: flex-end;
+}
+
+// ******************************
+// ** _fullBanner.scss
+.full-banner {
+  height: calc(100vh - 121px);
+  min-height: 100%;
+  background-image: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(0, 0, 0, 0.2) 100%
+    ),
+    url('../assets/homepage-banner.-resized.jpg');
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+
+  .full-banner-text {
+    position: absolute;
+    width: 100%;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    h1 {
+      color: $elysian-secondary;
+      margin-bottom: 50px;
+    }
+    .scroll-down {
+      margin-top: 25px;
+      a {
+        padding: 20px;
+      }
+    }
+  }
+}
+// ******************************
+// ** Main Sections
+.main-section {
+  padding: 80px 0;
+  @include breakpoint(medium) {
+    padding: 120px 0;
+  }
+  @include breakpoint(large) {
+    padding: 160px 0;
+  }
+}
 // ******************************
 // ** _header.scss
 .header {
   background: yellow;
   padding: 10px 0 30px;
-  text-transform: uppercase;
+  @include transition();
+
   a {
     padding: 0.7rem;
     font-size: 15px;
     letter-spacing: 2px;
   }
-}
 
-.logo {
-  width: 144px;
-  margin: 20px auto 0;
-  img:last-child {
-    width: 124px;
-    margin: 14px auto 0;
+  .logo {
+    margin: 20px auto 0;
+    .logo-text {
+      width: 124px;
+      margin: 14px auto 0;
+    }
+  }
+  // Sticky Menu
+  &.is-stuck {
+    padding: 15px 0;
+    .logo {
+      margin: 0 auto;
+      .logo-text {
+        display: none;
+      }
+    }
   }
 }
-
 .menu-shop {
   color: $elysian-secondary;
   @include transition();
@@ -120,9 +287,68 @@ a {
   &:hover,
   &:focus {
     .round-rectangle {
-      background-color: $elysian-primary-darken;
+      background-color: $elysian-primary-dark;
     }
     color: $elysian-secondary !important;
+  }
+}
+// ******************************
+
+// ******************************
+// ** footer.scss
+.footer {
+  background-color: $elysian-primary-light;
+  padding: 40px 0;
+  color: $elysian-secondary;
+
+  .cell {
+    text-align: center;
+  }
+  // Only affects medium screens and larger
+  @include breakpoint(medium) {
+    padding: 80px 0;
+
+    .cell {
+      text-align: inherit;
+      &.text-right {
+        text-align: right;
+      }
+    }
+    // All CSS in here goes inside the media query
+  }
+
+  .footer-section-1 {
+  }
+  .footer-section-2 {
+    font-size: 15px;
+    .menu {
+      li {
+        a {
+          color: $elysian-secondary;
+          padding: 0 0.5rem;
+          font-family: 'Lettera Text Pro', sans-serif;
+        }
+        &:first-of-type {
+          a {
+            padding-left: 0;
+          }
+        }
+        &:last-of-type {
+          a {
+            padding-right: 0;
+          }
+        }
+      }
+      li {
+        display: inline;
+        border-left: 1px solid;
+        padding-left: 0.3em;
+        &:first-child {
+          border-left: none;
+          padding-left: 0;
+        }
+      }
+    }
   }
 }
 // ******************************
@@ -148,7 +374,7 @@ $white: #fefefe;
 $body-background: $elysian-background;
 $body-font-color: $elysian-primary;
 // TODO: Import Font
-$body-font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+$body-font-family: 'Lettera Text Pro', sans-serif;
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;
