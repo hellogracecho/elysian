@@ -150,7 +150,12 @@ a {
   border-radius: 20px;
   letter-spacing: 2px;
   text-transform: uppercase;
+  @include transition();
 
+  &:hover,
+  &:focus {
+    filter: brightness(0.9);
+  }
   &.btn-white-1 {
     color: $elysian-primary;
     background-color: $elysian-secondary;
@@ -304,23 +309,10 @@ a {
   .cell {
     text-align: center;
   }
-  // Only affects medium screens and larger
-  @include breakpoint(medium) {
-    padding: 80px 0;
 
-    .cell {
-      text-align: inherit;
-      &.text-right {
-        text-align: right;
-      }
-    }
-    // All CSS in here goes inside the media query
-  }
-
-  .footer-section-1 {
-  }
   .footer-section-2 {
     font-size: 15px;
+    font-weight: 700;
     .menu {
       li {
         a {
@@ -350,6 +342,18 @@ a {
       }
     }
   }
+
+  // Only affects medium screens and larger
+  @include breakpoint(medium) {
+    padding: 80px 0;
+
+    .cell {
+      text-align: inherit;
+      &.text-right {
+        text-align: right;
+      }
+    }
+  }
 }
 // ******************************
 
@@ -357,7 +361,7 @@ a {
 // ---------
 
 $global-font-size: 100%;
-$global-width: rem-calc(1200);
+$global-width: rem-calc(1440);
 $global-lineheight: 1.5;
 $foundation-palette: (
   primary: #1779ba,
@@ -1205,8 +1209,8 @@ $xy-grid: true;
 $grid-container: $global-width;
 $grid-columns: 12;
 $grid-margin-gutters: (
-  small: 20px,
-  medium: 30px,
+  small: 30px,
+  medium: 40px,
 );
 $grid-padding-gutters: $grid-margin-gutters;
 $grid-container-padding: $grid-padding-gutters;
