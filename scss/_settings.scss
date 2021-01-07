@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Pragati+Narrow:wght@700&display=swap');
+
 //  Foundation for Sites Settings
 //  -----------------------------
 //
@@ -67,6 +69,63 @@ $elysian-background: #fcfaf6;
 $elysian-primary: #547879;
 $elysian-secondary: #f7f0e4;
 $elysian-tertiary: #e0abaa;
+$elysian-primary-darken: #476666;
+@mixin transition {
+  transition: all 0.2s ease-in;
+}
+
+body {
+  color: $elysian-primary;
+}
+
+a {
+  font-family: 'Pragati Narrow', sans-serif;
+  font-weight: 700;
+  &:hover,
+  &:focus {
+    color: $elysian-primary-darken !important;
+  }
+}
+
+// ******************************
+// ** _header.scss
+.header {
+  background: yellow;
+  padding: 10px 0 30px;
+  text-transform: uppercase;
+  a {
+    padding: 0.7rem;
+    font-size: 15px;
+    letter-spacing: 2px;
+  }
+}
+
+.logo {
+  width: 144px;
+  margin: 20px auto 0;
+  img:last-child {
+    width: 124px;
+    margin: 14px auto 0;
+  }
+}
+
+.menu-shop {
+  color: $elysian-secondary;
+  @include transition();
+  .round-rectangle {
+    background-color: $elysian-primary;
+    padding: 2px 20px;
+    border-radius: 20px;
+  }
+  &:hover,
+  &:focus {
+    .round-rectangle {
+      background-color: $elysian-primary-darken;
+    }
+    color: $elysian-secondary !important;
+  }
+}
+// ******************************
 
 // 1. Global
 // ---------
@@ -87,7 +146,8 @@ $dark-gray: #8a8a8a;
 $black: #0a0a0a;
 $white: #fefefe;
 $body-background: $elysian-background;
-$body-font-color: $black;
+$body-font-color: $elysian-primary;
+// TODO: Import Font
 $body-font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
 $body-antialiased: true;
 $global-margin: 1rem;

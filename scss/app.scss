@@ -6,8 +6,8 @@
 
 // Custom Components
 // TODO: Comment out whichever you don't use to save complier output
-@import './components/header'; //  Sticky Header Styles
-@import '../../../bower_components/font-awesome/scss/font-awesome';
+@import './components/header';
+@import './variables';
 
 // Global styles
 @include foundation-global-styles;
