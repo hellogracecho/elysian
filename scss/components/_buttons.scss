@@ -1,0 +1,38 @@
+// Button Styles
+.btn-container {
+  margin: 10px 0;
+  display: inline-block;
+}
+.btn-sm {
+  padding: 2px 20px;
+  font-size: 15px;
+}
+
+.btn-md {
+  padding: 5px 30px;
+  font-size: 16px;
+}
+
+.btn-round {
+  border-radius: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  @include transition();
+
+  &:hover,
+  &:focus {
+    filter: brightness(0.9);
+  }
+  &.btn-white-1 {
+    color: $elysian-primary;
+    background-color: $elysian-secondary;
+  }
+  &.btn-white-2 {
+    color: $elysian-primary-light-2;
+    background-color: $elysian-secondary;
+  }
+  &.btn-green {
+    color: $elysian-secondary;
+    background-color: $elysian-primary;
+  }
+}

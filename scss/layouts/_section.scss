@@ -1,0 +1,51 @@
+// Full Banner on main section
+.full-banner {
+  height: calc(100vh - 121px);
+  min-height: 100%;
+  background-image: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(0, 0, 0, 0.2) 100%
+    ),
+    url('../assets/homepage-banner.-resized.jpg');
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+
+  .full-banner-text {
+    position: absolute;
+    width: 100%;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    h1 {
+      color: $elysian-secondary;
+      margin-bottom: 50px;
+    }
+    .scroll-down {
+      margin-top: 25px;
+      a {
+        padding: 20px;
+      }
+    }
+  }
+}
+
+// Main Sections Styles
+.main-section {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 80px 0 0;
+  @include breakpoint(medium) {
+    padding: 120px 0 0;
+  }
+  @include breakpoint(large) {
+    padding: 160px 0 0;
+  }
+
+  &.roastery {
+    h3 {
+      line-height: 1.7;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+// Custom Global Style
+body {
+  color: $elysian-primary;
+}
+
+a {
+  font-family: 'Pragati Narrow', sans-serif;
+  font-weight: 700;
+  &:hover,
+  &:focus {
+    color: $elysian-quaternary !important;
+  }
+  &.link-page {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+}
+
+img {
+  width: 100%;
+}
+
+.logo {
+  width: 144px;
+  display: inline-block;
+
+  @include breakpoint(420 down) {
+    width: 100%;
+  }
+}

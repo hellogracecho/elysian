@@ -1,0 +1,61 @@
+// Footer Styles
+.footer {
+  background-color: $elysian-primary-light;
+  padding: 40px 0;
+  color: $elysian-secondary;
+
+  .cell {
+    text-align: center;
+  }
+
+  .footer-section-2 {
+    font-size: 15px;
+    font-weight: 700;
+    .menu {
+      li {
+        a {
+          color: $elysian-secondary;
+          padding: 0 0.5rem;
+          font-family: 'Lettera Text Pro', sans-serif;
+        }
+        &:first-of-type {
+          a {
+            padding-left: 0;
+          }
+        }
+        &:last-of-type {
+          a {
+            padding-right: 0;
+          }
+        }
+      }
+      li {
+        display: inline;
+        border-left: 1px solid;
+        padding-left: 0.3em;
+        &:first-child {
+          border-left: none;
+          padding-left: 0;
+        }
+      }
+    }
+  }
+  .footer-social-links a {
+    font-size: 90%;
+    @include breakpoint(350px) {
+      font-size: 100%;
+    }
+  }
+
+  // Only affects medium screens and larger
+  @include breakpoint(medium) {
+    padding: 80px 0;
+
+    .cell {
+      text-align: inherit;
+      &.text-right {
+        text-align: right;
+      }
+    }
+  }
+}

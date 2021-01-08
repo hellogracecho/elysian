@@ -1,0 +1,148 @@
+// Header Styles
+.header {
+  &.is-stuck {
+    background: $elysian-secondary;
+  }
+  @include breakpoint(large) {
+    background: transparent;
+  }
+  padding: 10px 0 30px;
+  @include transition();
+
+  a {
+    padding: 0.7rem;
+    font-size: 15px;
+    letter-spacing: 2px;
+  }
+
+  .logo {
+    margin: 20px auto 0;
+    .logo-text {
+      width: 124px;
+      margin: 14px auto 0;
+    }
+  }
+
+  // Sticky Fixed Header Styles
+  &.is-stuck {
+    padding: 15px 0;
+    .logo {
+      margin: 0 auto;
+      .logo-text {
+        display: none;
+      }
+    }
+  }
+}
+
+.main-social-links a {
+  font-size: 18px;
+  padding: 10px !important;
+}
+
+// Mobile Navigation Hamburger Menu
+// menu mobile
+.menu-mobile {
+  margin-top: -70px;
+}
+
+.is-stuck .menu-mobile {
+  margin-top: -48px;
+}
+
+.menu-mobile {
+  display: none;
+}
+@include breakpoint(medium down) {
+  .hide-tablet {
+    display: none !important;
+  }
+  .menu-mobile {
+    display: block;
+  }
+}
+@include breakpoint(420 down) {
+  .hide-mobile {
+    display: none;
+  }
+}
+
+.menu-mobile {
+  ul.menu-mobile {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: $elysian-secondary;
+    clear: both;
+    max-height: 0;
+    @include transition();
+    li .dummy {
+      display: block;
+      padding: 10px;
+    }
+    li a {
+      display: block;
+      text-align: center;
+      padding: 20px;
+      &:hover,
+      &:focus {
+        background-color: $white;
+      }
+    }
+  }
+  // menu icon
+  .mobile-menu-icon {
+    cursor: pointer;
+    // float: left; //not support on mobile device
+    display: flex; // to support on mobile
+    padding: 28px 20px;
+    margin: 0;
+    position: relative;
+    user-select: none;
+    .navicon {
+      background: $elysian-primary;
+      display: block;
+      height: 2px;
+      position: relative;
+      @include transition();
+      width: 18px;
+      &::before,
+      &::after {
+        background: $elysian-primary;
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        transition: all 0.2s ease-out;
+        width: 100%;
+      }
+      &::before {
+        top: 5px;
+      }
+      &::after {
+        top: -5px;
+      }
+    }
+  }
+  // menu btn: CSS Trick with checkbox
+  .menu-btn {
+    display: none;
+    &:checked ~ .menu-mobile {
+      max-height: 340px;
+    }
+    &:checked ~ .mobile-menu-icon .navicon {
+      background: transparent;
+    }
+    &:checked ~ .mobile-menu-icon .navicon:before {
+      transform: rotate(-45deg);
+    }
+    &:checked ~ .mobile-menu-icon .navicon:after {
+      transform: rotate(45deg);
+    }
+    &:checked ~ .mobile-menu-icon:not(.steps) .navicon:before,
+    &:checked ~ .mobile-menu-icon:not(.steps) .navicon:after {
+      top: 0;
+    }
+  }
+}

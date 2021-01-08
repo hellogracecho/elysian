@@ -1,0 +1,62 @@
+// Custom Typography
+@font-face {
+  font-family: 'Pragati Narrow';
+  src: url('../assets/fonts/PragatiNarrow-Bold.woff2') format('woff2'),
+    url('../assets/fonts/PragatiNarrow-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pragati Narrow';
+  src: url('../assets/fonts/PragatiNarrow-Regular.woff2') format('woff2'),
+    url('../assets/fonts/PragatiNarrow-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lettera Text Pro';
+  src: url('../assets/fonts/LetteraTextPro.woff2') format('woff2'),
+    url('../assets/fonts/LetteraTextPro.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lettera Text Pro';
+  src: url('../assets/fonts/LetteraTextPro-Bold.woff2') format('woff2'),
+    url('../assets/fonts/LetteraTextPro-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Vollkorn';
+  src: url('../assets/fonts/Vollkorn-Italic.woff2') format('woff2'),
+    url('../assets/fonts/Vollkorn-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+.text-italic {
+  font-family: 'Vollkorn', serif;
+  font-size: 18px;
+  margin-top: 40px;
+  color: $elysian-tertiary;
+}
+
+.text-subhead {
+  font-size: 14px;
+  color: $elysian-tertiary;
+  text-transform: uppercase;
+}
+
+.text-all-uppercase {
+  text-transform: uppercase;
+}
