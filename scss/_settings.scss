@@ -294,6 +294,26 @@ img {
     }
   }
 }
+
+.video-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  &::after {
+    padding-top: 56.25%;
+    display: block;
+    content: '';
+  }
+}
+
+iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 // ******************************
 // ** _header.scss
 .header {
@@ -325,6 +345,7 @@ img {
     }
   }
 }
+
 .menu-shop {
   color: $elysian-secondary;
   @include transition();
@@ -1222,12 +1243,12 @@ $thumbnail-radius: $global-radius;
 // 53. Title Bar
 // -------------
 
-$titlebar-background: $black;
-$titlebar-color: $white;
+$titlebar-background: transparent;
+$titlebar-color: $elysian-primary;
 $titlebar-padding: 0.5rem;
 $titlebar-text-font-weight: bold;
-$titlebar-icon-color: $white;
-$titlebar-icon-color-hover: $medium-gray;
+$titlebar-icon-color: $elysian-primary;
+$titlebar-icon-color-hover: $elysian-primary;
 $titlebar-icon-spacing: 0.25rem;
 
 // 54. Tooltip
@@ -1249,7 +1270,7 @@ $tooltip-radius: $global-radius;
 // -----------
 
 $topbar-padding: 0.5rem;
-$topbar-background: $light-gray;
+$topbar-background: $elysian-secondary;
 $topbar-submenu-background: $topbar-background;
 $topbar-title-spacing: 0.5rem 1rem 0.5rem 0;
 $topbar-input-width: 200px;
