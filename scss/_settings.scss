@@ -317,7 +317,12 @@ iframe {
 // ******************************
 // ** _header.scss
 .header {
-  background: yellow;
+  &.is-stuck {
+    background: $elysian-secondary;
+  }
+  @include breakpoint(large) {
+    background: transparent;
+  }
   padding: 10px 0 30px;
   @include transition();
 
@@ -345,6 +350,108 @@ iframe {
     }
   }
 }
+
+// ????
+// ?? Mobile Hamburger Menu
+.nav-mobile {
+  display: none;
+}
+@include breakpoint(medium down) {
+  .hide-mobile {
+    display: none !important;
+  }
+  .nav-mobile {
+    display: block;
+  }
+}
+// ???
+
+/* menu */
+.is-stuck .nav-mobile {
+  margin-top: -48px;
+}
+.is-anchored .nav-mobile {
+  margin-top: -70px;
+}
+.nav-mobile {
+  ul.menu-mobile {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: $elysian-secondary;
+    clear: both;
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
+    li .dummy {
+      display: block;
+      padding: 10px;
+    }
+    li a {
+      display: block;
+      text-align: center;
+      padding: 20px;
+      &:hover {
+        background-color: #f4f4f4;
+      }
+    }
+  }
+  /* menu icon */
+  .nav-menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    float: left;
+    padding: 28px 20px;
+    margin: 0;
+    position: relative;
+    user-select: none;
+    .navicon {
+      background: $elysian-primary;
+      display: block;
+      height: 2px;
+      position: relative;
+      transition: background 0.2s ease-out;
+      width: 18px;
+      &::before,
+      &::after {
+        background: $elysian-primary;
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        transition: all 0.2s ease-out;
+        width: 100%;
+      }
+      &::before {
+        top: 5px;
+      }
+      &::after {
+        top: -5px;
+      }
+    }
+  }
+  /* menu btn */
+  .menu-btn {
+    display: none;
+    &:checked ~ .menu-mobile {
+      max-height: 340px;
+    }
+    &:checked ~ .nav-menu-icon .navicon {
+      background: transparent;
+    }
+    &:checked ~ .nav-menu-icon .navicon:before {
+      transform: rotate(-45deg);
+    }
+    &:checked ~ .nav-menu-icon .navicon:after {
+      transform: rotate(45deg);
+    }
+    &:checked ~ .nav-menu-icon:not(.steps) .navicon:before,
+    &:checked ~ .nav-menu-icon:not(.steps) .navicon:after {
+      top: 0;
+    }
+  }
+}
+// ????
 
 .menu-shop {
   color: $elysian-secondary;

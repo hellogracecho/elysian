@@ -12,46 +12,64 @@
 </head>
 
 <body>
-  <!-- Sticky Header -->
-  <div class="cell small-6 right" data-sticky-container>
-    <div class="header text-all-uppercase" data-sticky data-sticky-on="xxlarge" data-margin-top="0">
-      <div class="grid-container">
-        <div class="grid-x flex-align-center">
-          <div class="cell small-4">
-            <ul class="menu">
-              <li><a href="#">Culture</a></li>
-              <li><a href="#">Wholesale</a></li>
-              <li><a href="#">Locations</a></li>
-            </ul>
-          </div>
-          <div class="cell small-4">
-
-            <div class="logo grid-x">
-              <img class="cell" src="./assets/elysian-logo.png" alt="Logo of Elysian">
-              <img class="cell logo-text" src="./assets/elysian-logo-sub-text.png"
-                alt="Sub text logo of Elysian Coffee Roasters">
-            </div>
-          </div>
-          <div class="cell small-4 text-right">
-            <a class="menu-shop" href="#"><span class="round-rectangle">Shop</span></a>
-            <a class="menu-search" href="#"><i class="fas fa-search"></i></a>
-            <a href="#">(0) Cart</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- Main -->
   <!-- Main: Banner with hero image -->
   <div class="full-banner text-center">
+    <!-- Sticky Header -->
+    <div class="cell small-6 right" data-sticky-container>
+      <div class="header text-all-uppercase" data-sticky data-sticky-on="xxlarge" data-margin-top="0">
+        <div class="grid-container">
+          <div class="grid-x flex-align-center">
+            <div class="cell small-4">
+              <ul class="menu hide-mobile">
+                <li><a href="#">Culture</a></li>
+                <li><a href="#">Wholesale</a></li>
+                <li><a href="#">Locations</a></li>
+              </ul>
+            </div>
+            <div class="cell small-4">
+              <div class="logo grid-x">
+                <img class="cell" src="./assets/elysian-logo.png" alt="Logo of Elysian">
+                <img class="cell logo-text" src="./assets/elysian-logo-sub-text.png"
+                  alt="Sub text logo of Elysian Coffee Roasters">
+              </div>
+            </div>
+            <div class="cell small-4 text-right">
+              <a class="menu-shop hide-mobile" href="#"><span class="round-rectangle">Shop</span></a>
+              <a class="menu-search hide-mobile" href="#"><i class="fas fa-search"></i></a>
+              <a href="#">(0) Cart</a>
+            </div>
+          </div>
+        </div>
+        <!-- Mobile Hamburger menu -->
+        <div class="nav-mobile">
+          <input class="menu-btn" type="checkbox" id="menu-btn" />
+          <label class="nav-menu-icon" for="menu-btn"><span class="navicon"></span></label>
+          <ul class="menu-mobile">
+            <li><span class="dummy"></span></li>
+            <li>
+              <a class="menu-shop" href="#"><span class="round-rectangle">Shop</span></a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-search"></i> Search</a>
+            </li>
+
+            <li><a href="#">Culture</a></li>
+            <li><a href="#">Wholesale</a></li>
+            <li><a href="#">Locations</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
     <div class="full-banner-text max-600">
       <h1>Roasted in the heart of Vancouver,
         where we make coffee easy to love.</h1>
       <div class="btn-container">
         <a href="#"><span class="btn-round btn-white-1">Elysian Culture</span></a>
       </div>
-      <div class="mt-3 scroll-down">
+      <div class="scroll-down">
         <a href="#">
           <svg width="22px" height="30px" viewBox="0 0 22 30" version="1.1" xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink">
