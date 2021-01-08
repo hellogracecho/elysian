@@ -23,7 +23,9 @@ img {
 .logo {
   width: 144px;
   display: inline-block;
+}
 
+.header .logo {
   @include breakpoint(420 down) {
     width: 100%;
   }
