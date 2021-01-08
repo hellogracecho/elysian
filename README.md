@@ -1,6 +1,8 @@
 # Foundation for Sites Template
 
-👩🏻‍💻 This is personal learning purpose only with Foundation 6 (UI Framework)
+- Check out this project live 👉🏼 https://hellogracecho.github.io/elysian/
+- This code is build with Foundation 6 (https://get.foundation/sites/docs/)
+- This is personal learning purpose only 👩🏻‍💻
 
 **Please open all issues with this template on the main [Foundation for Sites](https://github.com/zurb/foundation-sites/issues) repo.**
 
